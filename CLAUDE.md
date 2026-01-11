@@ -18,3 +18,16 @@ Centralized asset storage repository for media files (images, PDFs) used by port
 - **Image format:** WebP preferred for web optimization
 - **Naming pattern:** `Category_description.webp` (e.g., `Blog_technicalfoundations.webp`, `About_magic.webp`)
 - **Git LFS** is enabled for binary file handling
+
+## Image Conversion
+
+When adding new images and asked to convert them, use sharp CLI to:
+1. Convert PNG to WebP format
+2. Compress output to under 1MB
+
+Example command:
+```bash
+npx sharp-cli --input image.png --output image.webp --format webp --quality 80
+```
+
+Adjust quality parameter (0-100) as needed to achieve target file size under 1MB.
